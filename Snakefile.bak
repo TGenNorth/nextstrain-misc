@@ -33,15 +33,24 @@ rule files:
         lat_longs = "config/lat_longs.tsv",
         description = "config/description.md",
         description_zh = "config/description_zh.md",
-        clades = "config/clades.tsv",
-        sequences = "data/sequences.fasta",
-        metadata = "metadata.tsv"
+        clades = "config/clades.tsv"
 
 files = rules.files.params
 
+rule download:
+    message: "Downloading metadata and fasta files from S3"
+    output:
+        sequences = config["sequences"],
+        metadata = config["metadata"]
+    shell:
+        """
+        echo {output.metadata:q}
+        echo {output.sequences:q}
+        """
+
 checkpoint partition_sequences:
     input:
-        sequences = files.sequences
+        sequences = rules.download.output.sequences
     output:
         split_sequences = directory("results/split_sequences")
     params:
@@ -145,7 +154,7 @@ rule refine:
     input:
         tree = rules.tree.output.tree,
         alignment = rules.mask.output,
-        metadata = files.metadata
+        metadata = rules.download.output.metadata
     output:
         tree = "results/tree.nwk",
         node_data = "results/branch_lengths.json"
@@ -268,7 +277,7 @@ rule colors:
 rule recency:
     message: "Use metadata on submission date to construct submission recency field"
     input:
-        metadata = files.metadata
+        metadata = rules.download.output.metadata
     output:
         "results/recency.json"
     shell:
@@ -282,7 +291,7 @@ rule tip_frequencies:
     message: "Estimating censored KDE frequencies for tips"
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata
+        metadata = rules.download.output.metadata
     output:
         tip_frequencies_json = "auspice/ncov_tip-frequencies.json"
     params:
@@ -307,7 +316,7 @@ rule export:
     message: "Exporting data files for for auspice"
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata,
+        metadata = rules.download.output.metadata,
         branch_lengths = rules.refine.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
@@ -336,7 +345,7 @@ rule export_gisaid:
     message: "Exporting data files for for auspice"
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata,
+        metadata = rules.download.output.metadata,
         branch_lengths = rules.refine.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
@@ -365,7 +374,7 @@ rule export_zh:
     message: "Exporting data files for for auspice"
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata,
+        metadata = rules.download.output.metadata,
         branch_lengths = rules.refine.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
@@ -488,7 +497,7 @@ rule dated_json:
 rule poisson_tmrca:
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata,
+        metadata = rules.download.output.metadata,
         nt_muts = rules.ancestral.output.node_data
     output:
         "figures/ncov_poisson-tmrca.png"

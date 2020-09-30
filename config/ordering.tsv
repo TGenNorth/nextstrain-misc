@@ -2,26 +2,11 @@ location	Wuhan
 location	Tianmen
 location	Hefei
 location	Jingzhou
-location	Jiujiang
-location	Jian
-location	Xinyu
-location	Shangrao
-location	Ganzhou
 location	Pingxiang
 location	Zhongxian
 location	Yongchuan
-location	Huizhou
-location	Shantou
-location	Zhongshan
-location	Shanwei
-location	Yangjiang
-location	Shaoguan
-location	Dongguan
-location	Zhanjiang
-location	Beijing
 location	Chongqing
 location	Suzhou
-location	Fuyang
 location	Chengdu
 location	Kunming
 location	Hangzhou
@@ -33,10 +18,11 @@ location	Qingdao
 location	Guangzhou
 location	NanChang
 location	Foshan
-location	Hong Kong
+location	Hong_Kong
 location	Taipei
 location	Taoyuan
 location	Kaohsiung
+location	Bangkok
 location	Aichi
 location	Tokyo
 location	Kyoto
@@ -44,15 +30,12 @@ location	Gyeonggi
 location	Chungcheongnam
 location	Seoul
 location	Kathmandu
-location	Thanh Hoa
+location	Thanh_Hoa
 location	Hanoi
 location	Bangkok
 location	Singapore
-location	Gold Coast
+location	Gold_Coast
 location	Sydney
-location	Tweed Heads
-location	Perth
-location	Sunshine Coast
 location	Melbourne
 location	Brisbane
 location	Rockhampton
@@ -62,19 +45,17 @@ location	Gilgit
 location	Riyadh
 location	Hawali
 location	Dasman
-location	Ulan-Ude
-location	Vienne
-location	Heinsberg District
+location	Heinsberg_District
 location	Heinsberg
 location	Munich
 location	Duesseldorf
 location	Delft
 location	Utrecht
 location	Zeewolde
-location	Loon op zand
+location	Loon_op_zand
 location	Berlicum
 location	Blaricum
-location	Hardinxveld Giessendam
+location	Hardinxveld_Giessendam
 location	Coevorden
 location	Diemen
 location	Nootdorp
@@ -92,194 +73,69 @@ location	Oisterwijk
 location	Dalen
 location	Budapest
 location	Nantes
-location	Tours
-location	Brest
-location	Vanves
-location	Crouy en Thelle
-location	Meudon la Forêt
-location	Crépy en Valois
-location	Bourg-en-Bresse
-location	Saint-Priest
-location	Venissieux
-location	Macon
-location	Privas
-location	Valence
-location	Lyon
+location	Crépy_en_Valois
 location	Paris
-location	Saint Germain en Laye
-location	Seine-Port
-location	Abondant
-location	Levallois-Perret
 location	Reims
-location	Garches
-location	Rennes
-location	Longjumeau
+location	garches
+location	rennes
+location	château-thierry
+location	longjumeau
 location	Levallois-perret
 location	Pontoise
 location	Compiègne
-location	Woippy
-location	Spicheren
-location	Chateau-Thierry
-location	Asnières-sur-Seine
-location	Garches
-location	Juvisy-sur-Orge
-location	Orsay
-location	Saint-Thibault-des-Vignes
-location	Gennevilliers
-location	Noisy le Roi
-location	Gondrecourt-le-chateau
-location	Moussy Le Neuf
-location	Carentan
 location	Contamines
 location	Thise
 location	Montreux-Chateau
 location	Rouen
 location	Leuven
-location	Villerot
-location	Poppel
-location	Havre
-location	Couillet
-location	Trazegnies
-location	Jumet
-location	Koersel
-location	Wandre
-location	Cuesmes
-location	Saive
-location	Quevaucamps
-location	Montignies-Sur-Sambre
-location	Tertre
-location	Heverlee
-location	Kain
-location	Winksele
-location	Jemappes
-location	Bassilly
-location	Blandain
-location	Neerpelt
-location	Geluwe
-location	Haulchin
-location	Bierset
-location	Saisinne
-location	Braine-le-Chateau
-location	Arbre
-location	Temploux
-location	Ladeuze
-location	Forchies-la-marche
-location	Yernee-fraineux
 location	Starnberg
 location	Strasbourg
 location	Rome
 location	Milan
-location	Verona
-location	L'Aquila
-location	Teramo
-location	Valencia
-location	Luxembourg
+location	valencia
 location	England
-location	South Yorkshire
-location	Derbyshire
 location	Yorkshire
 location	Nottinghamshire
 location	Cardiff
 location	Rovaniemi
 location	Jönköping
 location	Helsinki
-location	Sao Paulo
+location	Sao_Paulo
 location	Brasilia
-location	Rio de Janeiro
-location	Florianopolis
-location	Niteroi
-location	Joinville
-location	Maceio
+location	Rio_de_Janeiro
 location	Manaus
-location	Feira de Santana
-location	Vila Velha
-location	Mexico City
-location	La Crosse County
-location	King County
-location	Snohomish County
-location	Pierce County
-location	Solano County
-location	Sonoma County
-location	Orange County
+location	Feira_de_Santana
+location	Vila_Velha
+location	Mexico_City
+location	King_County
+location	Snohomish_County
+location	Pierce_County
+location	Solano_County
+location	Sonoma_County
+location	Orange_County
 location	Kirkland
 location	Seattle
-location	Los Angeles
+location	Los_Angeles
 location	California
-location	Columbus
-location	Ketchikan
-location	Fairbanks
-location	Anchorage
-location	San Francisco
-location	San Diego County
-location	Marin County
-location	San Francisco County
-location	San Joaquin County
-location	Sacramento County
-location	Santa Clara County
-location	Grant County
-location	Snohomish County
-location	King County
-location	Clark County
-location	Umatilla County
+location	San_Francisco
+location	San_Diego_County
+location	Marin_County
+location	San_Francisco_County
+location	San_Joaquin_County
+location	Sacramento_County
+location	Santa_Clara_County
+location	Grant_County
+location	Snohomish_County
+location	King_County
+location	Clark_County
+location	Umatilla_County
 location	Phoenix
 location	Chicago
 location	Illinois
-location	Indianapolis
 location	Wisconsin
-location	Dane County
+location	Dane_County
 location	Boston
-location	Orange County NY
-location	Manhattan
-location	Nassau County
-location	Brooklyn
-location	Queens
-location	Staten Island
-location	Bronx
-location	Hudson County
-location	Westchester County
-location	Richmond County
-location	Franklin County
-location	Suffolk County
-location	Onondaga County
-location	Rockland County
-location	Chenango County
-location	Saratoga County
-location	Montgomery County
-location	Ulster County
-location	Cayuga County
-location	Schenectady County
-location	Washington County
-location	Albany County
-location	Putnam County
-location	New York City
-location	Clinton County
-location	Broome County
-location	Jefferson County
-location	Dutchess County
-location	Passaic County
-location	Thiensville
-location	Racine
-location	Cudahy
-location	Mequon
-location	Wauwatosa
-location	Greenfield
-location	Milwaukee
-location	Campbellsport
-location	Jackson
-location	Oak Creek
-location	Port Washington
-location	Grafton
-location	New Berlin
-location	Pewaukee
-location	Franklin
-location	Whitefish Bay
-location	South Milwaukee
-location	Brookfield
-location	Elm Grove
-location	Glendale
-location	Accra
-
-
+location	Nassau_County
 
 
 division	China
@@ -297,16 +153,11 @@ division	Zhejiang
 division	Fujian
 division	Guangdong
 division	Shanghai
-division	Hong Kong
+division	Hong_Kong
 division	Taiwan
-division	Taipei
-division	New Taipei City
-division	Keelung
 division	Taoyuan
 division	Aichi
 division	Tokyo
-division	Chiba
-division	Ishikawa
 division	Saitama
 division	Nara
 division	Osaka
@@ -315,180 +166,47 @@ division	Kanagawa
 division	Gyeonggi
 division	Chungcheongnam
 division	Seoul
-division	South Korea
+division	South_Korea
 division	Selangor
-division	Kuala Lumpur
 division	Kathmandu
-division	Karnataka
-division	Gujarat
 division	Kerala
-division	Kochi
-division	Khyber Pakhtunkhwa
-division	Ramat Gan
 division	Iran
-division	Doha
 division	Kuwait
-division	Kayseri
-division	Istanbul
-division	Kocaeli
-division	Ankara
-division	Nevsehir
-division	Siirt
-division	Karaman
-division	Aksaray
-division	Kastamonu
-division	Balikesir
-division	Gilgit Baltistan
+division	Gilgit_Baltistan
 division	Tbilisi
-division	Thanh Hoa
-division	Ho Chi Minh City
+division	Thanh_Hoa
 division	Vinhphuc
-division	Red River Delta
+division	Red_River_Delta
 division	Quangning
 division	Sihanoukville
 division	Nonthaburi
-division	Bangkok
 division	Singapore
 division	Queensland
-division	Northern Territory
-division	New South Wales
-division	Western Australia
+division	New_South_Wales
 division	Victoria
 division	Wellington
 division	Otago
 division	Auckland
 division	Riyadh
-division	Saint-Petersburg
-division	Buryat Republic
 division	Europe
-division	Reykjavik
-division	Oslo
-division	Central Hungary
+division	Central_Hungary
 division	Baranya
-division	Kostoliste
-division	Kosice
-division	Bratislava
-division	Prague
-division	Martin
 division	Copenhagen
 division	Bretagne
-division	Ile de France
-division	Centre-Val de Loire
-division	France
+division	Ile_de_France
 division	Auvergne-Rhône-Alpes
-division	Pays de la Loire
-division	Hauts de France
+division	Pays_de_la_Loire
+division	Hauts_de_France
 division	Bretagne
 division	Bourgogne-France-Comté
 division	Normandie
-division	Grand Est
-division	Auvergne Rhone Alpes
-division	Spain
-division	Castilla Y León
-division	Basque Country
-division	Castilla La Mancha
-division	Andalusia
-division	Catalunya
-division	Castilla y Leon
-division	Barcelona
+division	Grand_Est
+division	Auvergne_Rhone_Alpes
+division	Castilla_Y_León
 division	Galicia
 division	Madrid
 division	Flanders
-division	Beersel
 division	Leuven
-division	Zinnik
-division	Namur
-division	Sint-Agatha-Berchem
-division	Wevelgem
-division	Waterloo
-division	Stekene
-division	Lanaken
-division	Vilvoorde
-division	Charleroi
-division	Mouscron
-division	Zoutleeuw
-division	Nieuwerkerken
-division	Courcelles
-division	Bree
-division	Knokke-Heist
-division	Herve
-division	Oudergem
-division	La Louviere
-division	Ukkel
-division	Quaregnon
-division	Genappe
-division	Ath
-division	Doornik
-division	Theux
-division	Berloz
-division	Anderlecht
-division	Gent
-division	Waasmunster
-division	Tielt-Winge
-division	Dalhem
-division	Quevy
-division	Lubbeek
-division	Hemiksem
-division	Sint-Gillis-Waas
-division	Walloon Brabant
-division	Herent
-division	Silly
-division	Wervik
-division	Belgium
-division	Pelt
-division	Blegny
-division	Estinnes
-division	Ravels
-division	Tournai
-division	Lasne
-division	Herstal
-division	Boutersem
-division	Dendermonde
-division	Saint-Ghislain
-division	Soignies
-division	Henri-chapelle
-division	Elsene
-division	Sint-Genesius-Rode
-division	Wanze
-division	Seraing
-division	Riemst
-division	Oostrozebeke
-division	Geraardsbergen
-division	Herselt
-division	Montigny-le-Tilleul
-division	Beringen
-division	Soumagne
-division	Havelange
-division	Fontaine-l Eveque
-division	Lummen
-division	Mons
-division	Boussu
-division	Tienen
-division	Grimbergen
-division	Colfontaine
-division	Bonheiden
-division	Bierbeek
-division	Ronse
-division	Etterbeek
-division	Sint-Truiden
-division	Andenne
-division	Linter
-division	Alken
-division	Tervuren
-division	Watermaal-Bosvoorde
-division	Couvin
-division	Braine-l alleud
-division	Tubize
-division	Frameries
-division	Honnelles
-division	Hasselt
-division	Chaineux
-division	Kalmthout
-division	Ganshoren
-division	Nevele
-division	Houthalen-Helchteren
-division	Zonhoven
-division	Gierle
 division	Dilbeek
 division	Schoten
 division	Rixensart
@@ -503,45 +221,22 @@ division	Kraainem
 division	Huldenberg
 division	Brussels
 division	Liège
-division	Saint-Saulve
-division	Helden
-division	Switzerland
-division	Lucerne
 division	Bavaria
-division	Duesseldorf
 division	Baden-Wuerttemberg
-division	Munich
-division	North Rhine Westphalia
+division	North_Rhine_Westphalia
 division	Netherlands
 division	Utrecht
-division	Deinze
-division	Antwerp
-division	Ellezelles
-division	Merelbeke
-division	Hoegaarden
-division	Asse
-division	Zolder
-division	Kaulile
-division	Eupen
-division	Oevel
-division	Ghent
 division	Overijssel
 division	Gelderland
 division	Limburg
 division	Drenthe
-division	North Brabant
+division	North_Brabant
 division	Flevoland
-division	South Holland
-division	North Holland
-division	Friesland
+division	South_Holland
+division	North_Holland
 division	Luxembourg
-division	Austria
-division	Vienna
-division	Germany
 division	Zielonogorskie
-division	Pomorskie
 division	Basel
-division	Basel-Stadt
 division	Bern
 division	Zurich
 division	Aargau
@@ -550,212 +245,108 @@ division	Vaud
 division	Ticino
 division	Graubünden
 division	Schwyz
-division	Comunitat Valenciana
-division	Athens
-division	Komen
+division	Comunitat_Valenciana
 division	Italy
 division	Lazio
-division	Marche
 division	Lombardy
-division	Abruzzo
-division	Rome
-division	Teramo
-division	Veneto
-division	Castel di Sangro
-division	Friuli Venezia Giulia
-division	Usti nad Labem
-division	Grand Canary Islands
-division	Canary Islands
-division	La Rioja
-division	Lisbon
-division	Croatia
-division	United Kingdom
-division	Northern Ireland
+division	Friuli_Venezia_Giulia
+division	Usti_nad_Labem
+division	Northern_Ireland
 division	England
-division	Nottinghamshire
+division	United_Kingdom
 division	Wales
 division	Dublin
-division	Tipperary
-division	Louth
-division	Wicklow
 division	Cork
 division	Limerick
 division	Scotland
 division	Småland
-division	Vasterbotten
-division	Västerbotten
-division	Moscow
 division	Helsinki
 division	Finland
-division	Denmark
 division	Portugal
 division	Lagos
 division	Kinshasa
-division	Sud Kivu
 division	KwaZulu-Natal
-division	Greater Accra
-division	West Coast Region
-division	Mbour
-division	Touba
-division	Dakar
-division	St-Louis
-division	Thies
-division	Blida
-division	Boufarik
 division	Santiago
 division	Talca
-division	Sao Paulo
-division	Espirito Santo
+division	Sao_Paulo
+division	Espirito_Santo
 division	Bahia
-division	Goiais
-division	Minas Gerais
-division	Rio Grande do Sul
-division	Rio de Janeiro
-division	Santa Catarina
-division	Alagoas
-division	Distrito Federal
-division	Amazonas State
-division	Antioquia
-division	Bogota
-division	Quito
-division	Guayas
-division	Pichincha
-division	Lima
-division	Montevideo
-division	Panama City
-division	Mexico City
-division	Estado de Mexico
-division	Chihuahua
-division	Puebla
-division	Queretaro
+division	Rio_de_Janeiro
+division	Distrito_Federal
+division	Amazonas_State
+division	Panama_City
+division	Mexico_City
 division	USA
-division	District of Columbia
-division	Maryland
-division	Texas
-division	Missouri
-division	Florida
-division	Georgia
-division	Louisiana
-division	North Carolina
-division	South Carolina
-division	Virginia
-division	Rhode Island
 division	Connecticut
-division	New York
-division	New Jersey
-division	Massachusetts
-division	New Hampshire
-division	Pennsylvania
-division	Ohio
-division	Indiana
+division	Texas
+division	Utah
+division	Arizona
+division	California
 division	Illinois
 division	Wisconsin
-division	Michigan
 division	Minnesota
-division	Iowa
-division	Nebraska
-division	Kansas
-division	Nevada
-division	Arizona
-division	Utah
-division	Wyoming
-division	Idaho
-division	California
-division	Grand Princess
-division	Oregon
+division	Massachusetts
+division	New_York
 division	Washington
-division	Hawaii
-division	Alaska
-division	Nova Scotia
-division	New Brunswick
+division	British_Columbia
 division	Ontario
-division	Manitoba
-division	Saskatchewan
-division	British Columbia
-
 
 country	China
-country	Hong Kong
+country	Hong_Kong
 country	Taiwan
-country	Philippines
 country	Japan
-country	South Korea
+country	South_Korea
 country	Nepal
 country	India
-country	Sri Lanka
 country	Vietnam
 country	Cambodia
 country	Thailand
 country	Malaysia
 country	Singapore
 country	Australia
-country	New Zealand
-country	Saudi Arabia
+country	New_Zealand
+country	Saudi_Arabia
 country	Kuwait
-country	Iran
-country	Israel
-country	Turkey
 country	Pakistan
 country	Georgia
-country	Russia
-country	Europe
-country	Latvia
-country	Slovakia
-country	Slovenia
 country	Poland
 country	Hungary
-country	Croatia
 country	France
-country	Iceland
-country	Norway
 country	Denmark
 country	Netherlands
 country	Belgium
 country	Luxembourg
 country	Germany
-country	Austria
-country	Croatia
 country	Switzerland
 country	Italy
 country	Spain
-country	Czech Republic
-country	United Kingdom
+country	Czech_Republic
+country	United_Kingdom
 country	Ireland
 country	Finland
 country	Sweden
 country	Portugal
-country	Greece
-country	Egypt
 country	Nigeria
-country	Ghana
-country	Senegal
-country	Gambia
-country	Algeria
-country	Democratic Republic of the Congo
-country	South Africa
+country	Congo
+country	South_Africa
 country	Chile
-country	Ecuador
-country	Peru
 country	Brazil
-country	Argentina
-country	Uruguay
-country	Colombia
 country	Panama
 country	Mexico
 country	USA
 country	Canada
 
 recency	Older
-recency	One month ago
-recency	One week ago
-recency	3-7 days ago
-recency	1-2 days ago
+recency	One_month_ago
+recency	One_week_ago
+recency	3-7_days_ago
+recency	1-2_days_ago
 recency	New
 
 region	Oceania
 region	Asia
 region	Africa
 region	Europe
-region	North America
-region	Central America
-region	South America
+region	North_America
+region	Central_America
+region	South_America

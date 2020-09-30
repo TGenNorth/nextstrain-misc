@@ -12,19 +12,13 @@ Site numbering and genome structure uses [Wuhan-Hu-1/2019](https://www.ncbi.nlm.
 
 If you'd like to customize and run the analysis yourself, please see the [developer docs](./DEV_DOCS.md).
 
-## How to run using your own data
-
-Please see
-- [How to format the metadata](./docs/metadata.md)
-- [Running a SARS-CoV-2 analysis](./docs/running.md)
-
 
 ## Contributing
 
 We welcome contributions from the community! Please note that we strictly adhere to the [Contributor Covenant Code of Conduct](https://github.com/nextstrain/.github/blob/master/CODE_OF_CONDUCT.md).
 
 ### Contributing to translations of our situation reports  
-Please see the [translations repo](https://github.com/nextstrain/translations) to get started!
+Please see our [Translation Docs](./TRANSLATION_DOCS.md) to get started!
 
 ### Contributing to software or documentation   
 Please see our [Contributor Guide](https://github.com/nextstrain/.github/blob/master/CONTRIBUTING.md) to get started!

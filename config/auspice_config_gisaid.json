@@ -56,15 +56,13 @@
       "type": "categorical"
     },
     {
-      "key": "gisaid_epi_isl",
-      "type": "categorical"
+      "key": "gisaid_epi_isl"
     },
     {
-      "key": "genbank_accession",
-      "type": "categorical"
+      "key": "genbank_accession"
     },
     {
-      "key": "country_exposure",
+      "key": "division_exposure",
       "title": "Exposure History",
       "type": "categorical"
     }
@@ -75,9 +73,9 @@
     "country"
   ],
   "display_defaults": {
-    "color_by": "country",
+    "color_by": "division",
     "distance_measure": "num_date",
-    "geo_resolution": "country",
+    "geo_resolution": "division",
     "map_triplicate": true,
     "branch_label": "none"
   },
@@ -85,6 +83,7 @@
     "recency",
     "location",
     "division",
+    "division_exposure",
     "country",
     "region",
     "host",
