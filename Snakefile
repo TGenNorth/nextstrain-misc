@@ -35,7 +35,7 @@ rule files:
         description_zh = "config/description_zh.md",
         clades = "config/clades.tsv",
         sequences = "data/sequences.fasta",
-        metadata = "metadata.tsv"
+        metadata = "data/metadata.tsv"
 
 files = rules.files.params
 
