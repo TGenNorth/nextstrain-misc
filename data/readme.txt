@@ -1,0 +1,2 @@
+metadata.tsv
+sequences.fasta

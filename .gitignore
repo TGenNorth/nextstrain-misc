@@ -1,0 +1,12 @@
+# remove all sequence files
+*.fasta
+
+# remove all metadata
+*.tsv
+
+# remove all snakemake process files
+*.snakemake
+results
+auspice/*
+data/*
+genome-sampler/*
