@@ -1,0 +1,2031 @@
+{
+  "meta": {
+    "build_url": "https://github.com/nextstrain/ncov",
+    "colorings": [
+      {
+        "key": "clade_membership",
+        "title": "Clade",
+        "type": "categorical"
+      },
+      {
+        "key": "num_date",
+        "title": "Sampling date",
+        "type": "continuous"
+      },
+      {
+        "key": "gt",
+        "title": "Genotype",
+        "type": "categorical"
+      },
+      {
+        "key": "country",
+        "scale": [
+          [
+            "China",
+            "#4C90C0"
+          ],
+          [
+            "USA",
+            "#AEBD50"
+          ]
+        ],
+        "title": "Country",
+        "type": "categorical"
+      },
+      {
+        "key": "date",
+        "scale": [
+          [
+            "2019-12-30",
+            "#5E1D9D"
+          ],
+          [
+            "2020-03-18",
+            "#492AB5"
+          ],
+          [
+            "2020-04-13",
+            "#4042C7"
+          ],
+          [
+            "2020-04-19",
+            "#3E5DD0"
+          ],
+          [
+            "2020-04-20",
+            "#4377CD"
+          ],
+          [
+            "2020-04-27",
+            "#4A8CC2"
+          ],
+          [
+            "2020-04-28",
+            "#549DB2"
+          ],
+          [
+            "2020-05-29",
+            "#60AA9E"
+          ],
+          [
+            "2020-06-15",
+            "#6EB389"
+          ],
+          [
+            "2020-07-20",
+            "#80B974"
+          ],
+          [
+            "2020-08-25",
+            "#92BC63"
+          ],
+          [
+            "2020-11-04",
+            "#A6BE55"
+          ],
+          [
+            "2020-11-05",
+            "#B9BC4A"
+          ],
+          [
+            "2020-11-06",
+            "#CBB742"
+          ],
+          [
+            "2020-12-27",
+            "#D9AD3D"
+          ],
+          [
+            "2021-01-22",
+            "#E29D39"
+          ],
+          [
+            "2021-02-24",
+            "#E68634"
+          ],
+          [
+            "2021-03-01",
+            "#E56A2F"
+          ],
+          [
+            "2021-03-08",
+            "#E04929"
+          ],
+          [
+            "2021-03-09",
+            "#DB2823"
+          ]
+        ],
+        "title": "Collection Date",
+        "type": "categorical"
+      },
+      {
+        "key": "division",
+        "scale": [
+          [
+            "Arizona",
+            "#4C90C0"
+          ],
+          [
+            "Hubei",
+            "#AEBD50"
+          ]
+        ],
+        "title": "Division",
+        "type": "categorical"
+      },
+      {
+        "key": "lineage",
+        "scale": [
+          [
+            "B",
+            "#4137C2"
+          ],
+          [
+            "B.1",
+            "#4066CF"
+          ],
+          [
+            "B.1.1",
+            "#4B8EC1"
+          ],
+          [
+            "B.1.1.61",
+            "#5EA8A2"
+          ],
+          [
+            "B.1.2",
+            "#78B67D"
+          ],
+          [
+            "B.1.311",
+            "#98BD5E"
+          ],
+          [
+            "B.1.371",
+            "#BABC4A"
+          ],
+          [
+            "B.1.404",
+            "#D6AF3E"
+          ],
+          [
+            "B.1.427",
+            "#E69337"
+          ],
+          [
+            "B.1.516",
+            "#E3612D"
+          ],
+          [
+            "B.1.569",
+            "#DB2823"
+          ]
+        ],
+        "title": "Pangolin Lineage",
+        "type": "categorical"
+      },
+      {
+        "key": "location",
+        "scale": [
+          [
+            "Coconino_County",
+            "#416DCE"
+          ],
+          [
+            "Maricopa_County",
+            "#59A3AA"
+          ],
+          [
+            "Navajo_County",
+            "#84BA6F"
+          ],
+          [
+            "Pima_County",
+            "#BBBC49"
+          ],
+          [
+            "Wuhan",
+            "#E29D39"
+          ],
+          [
+            "Yuma_County",
+            "#E1502A"
+          ]
+        ],
+        "title": "Location",
+        "type": "categorical"
+      },
+      {
+        "key": "region",
+        "scale": [
+          [
+            "Asia",
+            "#4C90C0"
+          ],
+          [
+            "North America",
+            "#AEBD50"
+          ]
+        ],
+        "title": "Region",
+        "type": "categorical"
+      }
+    ],
+    "description": "This NextStrain build shows SARS-CoV-2 viral genomes from COVID-19 cases in Arizona, USA.\n\nAlthough the genetic relationships among sampled viruses are quite clear in the phylogenetic tree, there is considerable uncertainty surrounding estimates of transmission dates and in reconstruction of geographic spread. Please be aware that specific inferred transmission patterns are only a hypothesis.\n\nSite numbering and genome structure use [hCoV-19/Wuhan/WIV04/2019](https://www.ncbi.nlm.nih.gov/nuccore/1802633808) as reference. Temporal resolution assumes a nucleotide substitution rate of 8 \u00d7 10^-4 subs per site per year. Full details on bioinformatic processing can be found [here](https://github.com/nextstrain/ncov).\n\nWe gratefully acknowledge the originating diagnostic laboratories and genome sequencing laboratories that have provided sequence and metadata, made publicly available through [GISAID](https://gisaid.org/), on which this research is partially based. An attribution table is available by clicking on \"Download Data\" at the bottom of the page and then clicking on \"Strain Metadata\" in the resulting dialog box.\n",
+    "display_defaults": {
+      "branch_label": "none",
+      "color_by": "lineage",
+      "distance_measure": "num_date",
+      "geo_resolution": "location",
+      "map_triplicate": true
+    },
+    "filters": [
+      "location"
+    ],
+    "genome_annotations": {
+      "E": {
+        "end": 26472,
+        "seqid": "config/reference.gb",
+        "start": 26245,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "M": {
+        "end": 27191,
+        "seqid": "config/reference.gb",
+        "start": 26523,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "N": {
+        "end": 29533,
+        "seqid": "config/reference.gb",
+        "start": 28274,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF10": {
+        "end": 29674,
+        "seqid": "config/reference.gb",
+        "start": 29558,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF14": {
+        "end": 28955,
+        "seqid": "config/reference.gb",
+        "start": 28734,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF1a": {
+        "end": 13468,
+        "seqid": "config/reference.gb",
+        "start": 266,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF1b": {
+        "end": 21555,
+        "seqid": "config/reference.gb",
+        "start": 13468,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF3a": {
+        "end": 26220,
+        "seqid": "config/reference.gb",
+        "start": 25393,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF6": {
+        "end": 27387,
+        "seqid": "config/reference.gb",
+        "start": 27202,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF7a": {
+        "end": 27759,
+        "seqid": "config/reference.gb",
+        "start": 27394,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF7b": {
+        "end": 27887,
+        "seqid": "config/reference.gb",
+        "start": 27756,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF8": {
+        "end": 28259,
+        "seqid": "config/reference.gb",
+        "start": 27894,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "ORF9b": {
+        "end": 28577,
+        "seqid": "config/reference.gb",
+        "start": 28284,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "S": {
+        "end": 25384,
+        "seqid": "config/reference.gb",
+        "start": 21563,
+        "strand": "+",
+        "type": "CDS"
+      },
+      "nuc": {
+        "end": 29903,
+        "seqid": "config/reference.gb",
+        "start": 1,
+        "strand": "+",
+        "type": "source"
+      }
+    },
+    "geo_resolutions": [
+      {
+        "demes": {
+          "Coconino_County": {
+            "latitude": 35.9,
+            "longitude": -111.65
+          },
+          "Maricopa_County": {
+            "latitude": 33.55,
+            "longitude": -112.4
+          },
+          "Navajo_County": {
+            "latitude": 34.94,
+            "longitude": -110.25
+          },
+          "Pima_County": {
+            "latitude": 32.1,
+            "longitude": -111.8
+          },
+          "Wuhan": {
+            "latitude": 30.554807,
+            "longitude": 114.271501
+          },
+          "Yuma_County": {
+            "latitude": 32.7,
+            "longitude": -113.9
+          }
+        },
+        "key": "location"
+      },
+      {
+        "demes": {
+          "Arizona": {
+            "latitude": 34.220707,
+            "longitude": -111.657462
+          },
+          "Hubei": {
+            "latitude": 31.095477,
+            "longitude": 112.676644
+          }
+        },
+        "key": "division"
+      },
+      {
+        "demes": {
+          "China": {
+            "latitude": 33.72434,
+            "longitude": 106.308729
+          },
+          "USA": {
+            "latitude": 39.095963,
+            "longitude": -99.844454
+          }
+        },
+        "key": "country"
+      }
+    ],
+    "maintainers": [
+      {
+        "name": "the Nextstrain team",
+        "url": "https://nextstrain.org/"
+      }
+    ],
+    "panels": [
+      "tree",
+      "map",
+      "entropy",
+      "frequencies"
+    ],
+    "title": "Genomic epidemiology of novel coronavirus",
+    "updated": "2021-04-08"
+  },
+  "tree": {
+    "branch_attrs": {
+      "labels": {
+        "clade": "19A"
+      },
+      "mutations": {}
+    },
+    "children": [
+      {
+        "branch_attrs": {
+          "mutations": {}
+        },
+        "name": "Wuhan_WIV04_2019_Wuhan_2019-12-30",
+        "node_attrs": {
+          "clade_membership": {
+            "value": "19A"
+          },
+          "country": {
+            "value": "China"
+          },
+          "date": {
+            "value": "2019-12-30"
+          },
+          "div": 0,
+          "division": {
+            "value": "Hubei"
+          },
+          "lineage": {
+            "value": "B"
+          },
+          "location": {
+            "value": "Wuhan"
+          },
+          "num_date": {
+            "confidence": [
+              2019.995890410959,
+              2019.995890410959
+            ],
+            "value": 2019.995890410959
+          },
+          "region": {
+            "value": "Asia"
+          }
+        }
+      },
+      {
+        "branch_attrs": {
+          "labels": {
+            "aa": "ORF1b: P314L; S: D614G",
+            "clade": "20A"
+          },
+          "mutations": {
+            "ORF1b": [
+              "P314L"
+            ],
+            "S": [
+              "D614G"
+            ],
+            "nuc": [
+              "C241T",
+              "C3037T",
+              "C14408T",
+              "A23403G"
+            ]
+          }
+        },
+        "children": [
+          {
+            "branch_attrs": {
+              "labels": {
+                "aa": "N: R203K, G204R; ORF14: G50N",
+                "clade": "20B"
+              },
+              "mutations": {
+                "N": [
+                  "R203K",
+                  "G204R"
+                ],
+                "ORF14": [
+                  "G50N"
+                ],
+                "nuc": [
+                  "G28881A",
+                  "G28882A",
+                  "G28883C"
+                ]
+              }
+            },
+            "children": [
+              {
+                "branch_attrs": {
+                  "labels": {
+                    "aa": "ORF1a: T1822I"
+                  },
+                  "mutations": {
+                    "ORF1a": [
+                      "T1822I"
+                    ],
+                    "nuc": [
+                      "C5730T"
+                    ]
+                  }
+                },
+                "name": "USA_AZ-TG648649_2020__2020-04-28",
+                "node_attrs": {
+                  "clade_membership": {
+                    "value": "20B"
+                  },
+                  "country": {
+                    "value": "USA"
+                  },
+                  "date": {
+                    "value": "2020-04-28"
+                  },
+                  "div": 8,
+                  "division": {
+                    "value": "Arizona"
+                  },
+                  "lineage": {
+                    "value": "B.1.1"
+                  },
+                  "num_date": {
+                    "confidence": [
+                      2020.3237704918033,
+                      2020.3237704918033
+                    ],
+                    "value": 2020.3237704918033
+                  },
+                  "region": {
+                    "value": "North America"
+                  }
+                }
+              },
+              {
+                "branch_attrs": {
+                  "labels": {
+                    "aa": "ORF9b: Q34L"
+                  },
+                  "mutations": {
+                    "ORF9b": [
+                      "Q34L"
+                    ],
+                    "nuc": [
+                      "C313T",
+                      "A28384T"
+                    ]
+                  }
+                },
+                "name": "USA_AZ-QDX-2118_2020__2020-03-18",
+                "node_attrs": {
+                  "clade_membership": {
+                    "value": "20B"
+                  },
+                  "country": {
+                    "value": "USA"
+                  },
+                  "date": {
+                    "value": "2020-03-18"
+                  },
+                  "div": 9,
+                  "division": {
+                    "value": "Arizona"
+                  },
+                  "lineage": {
+                    "value": "B.1.1"
+                  },
+                  "num_date": {
+                    "confidence": [
+                      2020.2117486338798,
+                      2020.2117486338798
+                    ],
+                    "value": 2020.2117486338798
+                  },
+                  "region": {
+                    "value": "North America"
+                  }
+                }
+              },
+              {
+                "branch_attrs": {
+                  "labels": {
+                    "aa": "ORF1a: G1456S; ORF1b: V1811F, D2318Y; ORF3a: T151I"
+                  },
+                  "mutations": {
+                    "ORF1a": [
+                      "G1456S"
+                    ],
+                    "ORF1b": [
+                      "V1811F",
+                      "D2318Y"
+                    ],
+                    "ORF3a": [
+                      "T151I"
+                    ],
+                    "nuc": [
+                      "C1684T",
+                      "G4631A",
+                      "A12829G",
+                      "G18898T",
+                      "G20419T",
+                      "T23047C",
+                      "A25315G",
+                      "C25844T"
+                    ]
+                  }
+                },
+                "name": "USA_AZ-TG305754_2020__2020-04-27",
+                "node_attrs": {
+                  "clade_membership": {
+                    "value": "20B"
+                  },
+                  "country": {
+                    "value": "USA"
+                  },
+                  "date": {
+                    "value": "2020-04-27"
+                  },
+                  "div": 15,
+                  "division": {
+                    "value": "Arizona"
+                  },
+                  "lineage": {
+                    "value": "B.1.1.61"
+                  },
+                  "num_date": {
+                    "confidence": [
+                      2020.3210382513662,
+                      2020.3210382513662
+                    ],
+                    "value": 2020.3210382513662
+                  },
+                  "region": {
+                    "value": "North America"
+                  }
+                }
+              }
+            ],
+            "name": "NODE_0000003",
+            "node_attrs": {
+              "clade_membership": {
+                "value": "20B"
+              },
+              "date": {
+                "value": "2020-03-03"
+              },
+              "div": 7,
+              "num_date": {
+                "confidence": [
+                  2020.1557045828915,
+                  2020.2088374737111
+                ],
+                "value": 2020.1710318053217
+              }
+            }
+          },
+          {
+            "branch_attrs": {
+              "mutations": {}
+            },
+            "children": [
+              {
+                "branch_attrs": {
+                  "labels": {
+                    "aa": "N: S194L; ORF14: Q41*"
+                  },
+                  "mutations": {
+                    "N": [
+                      "S194L"
+                    ],
+                    "ORF14": [
+                      "Q41*"
+                    ],
+                    "nuc": [
+                      "C28854T"
+                    ]
+                  }
+                },
+                "children": [
+                  {
+                    "branch_attrs": {
+                      "labels": {
+                        "aa": "N: P383L; ORF1a: T484A, K3353R, A3454V, M3661L, I4127V; ORF1b: K1873N; S: L5F"
+                      },
+                      "mutations": {
+                        "N": [
+                          "P383L"
+                        ],
+                        "ORF1a": [
+                          "T484A",
+                          "K3353R",
+                          "A3454V",
+                          "M3661L",
+                          "I4127V"
+                        ],
+                        "ORF1b": [
+                          "K1873N"
+                        ],
+                        "S": [
+                          "L5F"
+                        ],
+                        "nuc": [
+                          "A1715G",
+                          "A1810G",
+                          "C3241T",
+                          "A10323G",
+                          "C10474T",
+                          "C10626T",
+                          "A11246C",
+                          "A12644G",
+                          "T16743C",
+                          "G19086T",
+                          "C21575T",
+                          "C25587T",
+                          "G26828T",
+                          "T28226C",
+                          "C29421T"
+                        ]
+                      }
+                    },
+                    "name": "USA_AZ-TG779747_2021_Maricopa_County_2021-03-09",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20A"
+                      },
+                      "country": {
+                        "value": "USA"
+                      },
+                      "date": {
+                        "value": "2021-03-09"
+                      },
+                      "div": 20,
+                      "division": {
+                        "value": "Arizona"
+                      },
+                      "lineage": {
+                        "value": "B.1.404"
+                      },
+                      "location": {
+                        "value": "Maricopa_County"
+                      },
+                      "num_date": {
+                        "confidence": [
+                          2021.1849315068494,
+                          2021.1849315068494
+                        ],
+                        "value": 2021.1849315068494
+                      },
+                      "region": {
+                        "value": "North America"
+                      }
+                    }
+                  },
+                  {
+                    "branch_attrs": {
+                      "labels": {
+                        "aa": "ORF1a: Q1021H"
+                      },
+                      "mutations": {
+                        "ORF1a": [
+                          "Q1021H"
+                        ],
+                        "nuc": [
+                          "G3328T",
+                          "G6943T",
+                          "A20268G"
+                        ]
+                      }
+                    },
+                    "name": "USA_AZ-ASPHL-2538_2020_Yuma_County_2020-08-25",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20A"
+                      },
+                      "country": {
+                        "value": "USA"
+                      },
+                      "date": {
+                        "value": "2020-08-25"
+                      },
+                      "div": 8,
+                      "division": {
+                        "value": "Arizona"
+                      },
+                      "lineage": {
+                        "value": "B.1"
+                      },
+                      "location": {
+                        "value": "Yuma_County"
+                      },
+                      "num_date": {
+                        "confidence": [
+                          2020.6489071038252,
+                          2020.6489071038252
+                        ],
+                        "value": 2020.6489071038252
+                      },
+                      "region": {
+                        "value": "North America"
+                      }
+                    }
+                  }
+                ],
+                "name": "NODE_0000002",
+                "node_attrs": {
+                  "clade_membership": {
+                    "value": "20A"
+                  },
+                  "date": {
+                    "value": "2020-04-18"
+                  },
+                  "div": 5,
+                  "num_date": {
+                    "confidence": [
+                      2020.2476682351612,
+                      2020.528700269042
+                    ],
+                    "value": 2020.2971109910723
+                  }
+                }
+              },
+              {
+                "branch_attrs": {
+                  "labels": {
+                    "aa": "ORF1a: T265I; ORF3a: Q57H",
+                    "clade": "20C"
+                  },
+                  "mutations": {
+                    "ORF1a": [
+                      "T265I"
+                    ],
+                    "ORF3a": [
+                      "Q57H"
+                    ],
+                    "nuc": [
+                      "C1059T",
+                      "G25563T"
+                    ]
+                  }
+                },
+                "children": [
+                  {
+                    "branch_attrs": {
+                      "labels": {
+                        "aa": "ORF1a: P1640S, A2925V; ORF1b: K1383N; S: K1191N"
+                      },
+                      "mutations": {
+                        "ORF1a": [
+                          "P1640S",
+                          "A2925V"
+                        ],
+                        "ORF1b": [
+                          "K1383N"
+                        ],
+                        "S": [
+                          "K1191N"
+                        ],
+                        "nuc": [
+                          "C5183T",
+                          "C5392T",
+                          "T5614C",
+                          "C5812T",
+                          "C9039T",
+                          "T9622C",
+                          "G17427T",
+                          "G17616T",
+                          "G25135T",
+                          "C29708T"
+                        ]
+                      }
+                    },
+                    "name": "USA_AZ-TG521369_2020__2020-07-20",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20C"
+                      },
+                      "country": {
+                        "value": "USA"
+                      },
+                      "date": {
+                        "value": "2020-07-20"
+                      },
+                      "div": 16,
+                      "division": {
+                        "value": "Arizona"
+                      },
+                      "lineage": {
+                        "value": "B.1"
+                      },
+                      "num_date": {
+                        "confidence": [
+                          2020.5505464480875,
+                          2020.5505464480875
+                        ],
+                        "value": 2020.5505464480875
+                      },
+                      "region": {
+                        "value": "North America"
+                      }
+                    }
+                  },
+                  {
+                    "branch_attrs": {
+                      "mutations": {
+                        "nuc": [
+                          "C3736T",
+                          "G4720T",
+                          "G29553A"
+                        ]
+                      }
+                    },
+                    "name": "USA_AZ-TG640956_2020__2020-04-27",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20C"
+                      },
+                      "country": {
+                        "value": "USA"
+                      },
+                      "date": {
+                        "value": "2020-04-27"
+                      },
+                      "div": 9,
+                      "division": {
+                        "value": "Arizona"
+                      },
+                      "lineage": {
+                        "value": "B.1.371"
+                      },
+                      "num_date": {
+                        "confidence": [
+                          2020.3210382513662,
+                          2020.3210382513662
+                        ],
+                        "value": 2020.3210382513662
+                      },
+                      "region": {
+                        "value": "North America"
+                      }
+                    }
+                  },
+                  {
+                    "branch_attrs": {
+                      "labels": {
+                        "aa": "N: R209I; ORF10: R24L; ORF14: E56*"
+                      },
+                      "mutations": {
+                        "N": [
+                          "R209I"
+                        ],
+                        "ORF10": [
+                          "R24L"
+                        ],
+                        "ORF14": [
+                          "E56*"
+                        ],
+                        "nuc": [
+                          "C28609T",
+                          "G28621A",
+                          "G28899T",
+                          "G29628T"
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "branch_attrs": {
+                          "mutations": {
+                            "nuc": [
+                              "T13977C",
+                              "C24358A"
+                            ]
+                          }
+                        },
+                        "name": "USA_AZ-TG371439_2020__2020-05-29",
+                        "node_attrs": {
+                          "clade_membership": {
+                            "value": "20C"
+                          },
+                          "country": {
+                            "value": "USA"
+                          },
+                          "date": {
+                            "value": "2020-05-29"
+                          },
+                          "div": 12,
+                          "division": {
+                            "value": "Arizona"
+                          },
+                          "lineage": {
+                            "value": "B.1.516"
+                          },
+                          "num_date": {
+                            "confidence": [
+                              2020.4084699453551,
+                              2020.4084699453551
+                            ],
+                            "value": 2020.4084699453551
+                          },
+                          "region": {
+                            "value": "North America"
+                          }
+                        }
+                      },
+                      {
+                        "branch_attrs": {
+                          "labels": {
+                            "aa": "ORF1b: V1092F, V1840F"
+                          },
+                          "mutations": {
+                            "ORF1b": [
+                              "V1092F",
+                              "V1840F"
+                            ],
+                            "nuc": [
+                              "G16741T",
+                              "G18985T",
+                              "C23638T",
+                              "T24892C",
+                              "G29395A"
+                            ]
+                          }
+                        },
+                        "name": "USA_AZ-TG377809_2020_Navajo_County_2020-06-15",
+                        "node_attrs": {
+                          "clade_membership": {
+                            "value": "20C"
+                          },
+                          "country": {
+                            "value": "USA"
+                          },
+                          "date": {
+                            "value": "2020-06-15"
+                          },
+                          "div": 15,
+                          "division": {
+                            "value": "Arizona"
+                          },
+                          "lineage": {
+                            "value": "B.1.516"
+                          },
+                          "location": {
+                            "value": "Navajo_County"
+                          },
+                          "num_date": {
+                            "confidence": [
+                              2020.454918032787,
+                              2020.454918032787
+                            ],
+                            "value": 2020.454918032787
+                          },
+                          "region": {
+                            "value": "North America"
+                          }
+                        }
+                      }
+                    ],
+                    "name": "NODE_0000018",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20C"
+                      },
+                      "date": {
+                        "value": "2020-04-27"
+                      },
+                      "div": 10,
+                      "num_date": {
+                        "confidence": [
+                          2020.289198827362,
+                          2020.4013787902786
+                        ],
+                        "value": 2020.3204464484888
+                      }
+                    }
+                  },
+                  {
+                    "branch_attrs": {
+                      "labels": {
+                        "aa": "ORF8: S24L"
+                      },
+                      "mutations": {
+                        "ORF8": [
+                          "S24L"
+                        ],
+                        "nuc": [
+                          "C27964T"
+                        ]
+                      }
+                    },
+                    "children": [
+                      {
+                        "branch_attrs": {
+                          "labels": {
+                            "aa": "ORF1a: T1881I"
+                          },
+                          "mutations": {
+                            "ORF1a": [
+                              "T1881I"
+                            ],
+                            "nuc": [
+                              "C5907T"
+                            ]
+                          }
+                        },
+                        "name": "USA_AZ-TG654367_2020__2020-04-13",
+                        "node_attrs": {
+                          "clade_membership": {
+                            "value": "20C"
+                          },
+                          "country": {
+                            "value": "USA"
+                          },
+                          "date": {
+                            "value": "2020-04-13"
+                          },
+                          "div": 8,
+                          "division": {
+                            "value": "Arizona"
+                          },
+                          "lineage": {
+                            "value": "B.1"
+                          },
+                          "num_date": {
+                            "confidence": [
+                              2020.282786885246,
+                              2020.282786885246
+                            ],
+                            "value": 2020.282786885246
+                          },
+                          "region": {
+                            "value": "North America"
+                          }
+                        }
+                      },
+                      {
+                        "branch_attrs": {
+                          "labels": {
+                            "aa": "N: P67S, P199L; ORF14: Q46*; ORF1a: L3352F; ORF1b: N1653D, R2613C; ORF3a: G172V",
+                            "clade": "20G"
+                          },
+                          "mutations": {
+                            "N": [
+                              "P67S",
+                              "P199L"
+                            ],
+                            "ORF14": [
+                              "Q46*"
+                            ],
+                            "ORF1a": [
+                              "L3352F"
+                            ],
+                            "ORF1b": [
+                              "N1653D",
+                              "R2613C"
+                            ],
+                            "ORF3a": [
+                              "G172V"
+                            ],
+                            "nuc": [
+                              "C10319T",
+                              "A18424G",
+                              "C21304T",
+                              "G25907T",
+                              "C28472T",
+                              "C28869T"
+                            ]
+                          }
+                        },
+                        "children": [
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "ORF1a: D1903Y, V2066M"
+                              },
+                              "mutations": {
+                                "ORF1a": [
+                                  "D1903Y",
+                                  "V2066M"
+                                ],
+                                "nuc": [
+                                  "G5972T",
+                                  "G6461A",
+                                  "G26690T"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-TG717137_2021_Coconino_County_2021-01-22",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20G"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2021-01-22"
+                              },
+                              "div": 16,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.2"
+                              },
+                              "location": {
+                                "value": "Coconino_County"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2021.058904109589,
+                                  2021.058904109589
+                                ],
+                                "value": 2021.058904109589
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          },
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "N: T379I; ORF1a: M2606I"
+                              },
+                              "mutations": {
+                                "N": [
+                                  "T379I"
+                                ],
+                                "ORF1a": [
+                                  "M2606I"
+                                ],
+                                "nuc": [
+                                  "A685G",
+                                  "G8083A",
+                                  "C14805T",
+                                  "C29409T"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-TG768117_2020__2020-11-04",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20G"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2020-11-04"
+                              },
+                              "div": 17,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.2"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2020.8428961748634,
+                                  2020.8428961748634
+                                ],
+                                "value": 2020.8428961748634
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          },
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "M: S212I; N: E378D; ORF1a: P309L, P3134S, A3143V; ORF1b: L1701F; ORF3a: S58N, F207L"
+                              },
+                              "mutations": {
+                                "M": [
+                                  "S212I"
+                                ],
+                                "N": [
+                                  "E378D"
+                                ],
+                                "ORF1a": [
+                                  "P309L",
+                                  "P3134S",
+                                  "A3143V"
+                                ],
+                                "ORF1b": [
+                                  "L1701F"
+                                ],
+                                "ORF3a": [
+                                  "S58N",
+                                  "F207L"
+                                ],
+                                "nuc": [
+                                  "C1102T",
+                                  "C1191T",
+                                  "T1927C",
+                                  "C4090T",
+                                  "G7675T",
+                                  "C9665T",
+                                  "C9693T",
+                                  "C11572T",
+                                  "A11782G",
+                                  "C17004T",
+                                  "C18303T",
+                                  "C18568T",
+                                  "A22255T",
+                                  "G25565A",
+                                  "T26011C",
+                                  "G27157T",
+                                  "A29407T"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-ASU2994_2021_Maricopa_County_2021-03-08",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20G"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2021-03-08"
+                              },
+                              "div": 30,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.2"
+                              },
+                              "location": {
+                                "value": "Maricopa_County"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2021.182191780822,
+                                  2021.182191780822
+                                ],
+                                "value": 2021.182191780822
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          }
+                        ],
+                        "name": "NODE_0000012",
+                        "node_attrs": {
+                          "clade_membership": {
+                            "value": "20G"
+                          },
+                          "date": {
+                            "value": "2020-10-10"
+                          },
+                          "div": 13,
+                          "num_date": {
+                            "confidence": [
+                              2020.3415816442946,
+                              2020.7975326166404
+                            ],
+                            "value": 2020.7735499317387
+                          }
+                        }
+                      }
+                    ],
+                    "name": "NODE_0000011",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20C"
+                      },
+                      "date": {
+                        "value": "2020-04-11"
+                      },
+                      "div": 7,
+                      "num_date": {
+                        "confidence": [
+                          2020.2664611784694,
+                          2020.282786885246
+                        ],
+                        "value": 2020.2767229473056
+                      }
+                    }
+                  },
+                  {
+                    "branch_attrs": {
+                      "mutations": {}
+                    },
+                    "children": [
+                      {
+                        "branch_attrs": {
+                          "labels": {
+                            "aa": "N: T205I; ORF14: L52F; ORF1a: S3158T; ORF1b: P976L, D1183Y; S: S13I, W152C, L452R"
+                          },
+                          "mutations": {
+                            "N": [
+                              "T205I"
+                            ],
+                            "ORF14": [
+                              "L52F"
+                            ],
+                            "ORF1a": [
+                              "S3158T"
+                            ],
+                            "ORF1b": [
+                              "P976L",
+                              "D1183Y"
+                            ],
+                            "S": [
+                              "S13I",
+                              "W152C",
+                              "L452R"
+                            ],
+                            "nuc": [
+                              "G9738C",
+                              "G13713A",
+                              "C16394T",
+                              "G17014T",
+                              "G21600T",
+                              "G22018T",
+                              "T22917G",
+                              "C26681T",
+                              "A28272T",
+                              "C28887T",
+                              "C29362T"
+                            ]
+                          }
+                        },
+                        "children": [
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "M: A142V; N: A182S; ORF14: K28N; ORF1a: I529T, I3341T; S: L5F, S1252F"
+                              },
+                              "mutations": {
+                                "M": [
+                                  "A142V"
+                                ],
+                                "N": [
+                                  "A182S"
+                                ],
+                                "ORF14": [
+                                  "K28N"
+                                ],
+                                "ORF1a": [
+                                  "I529T",
+                                  "I3341T"
+                                ],
+                                "S": [
+                                  "L5F",
+                                  "S1252F"
+                                ],
+                                "nuc": [
+                                  "T1237C",
+                                  "T1851C",
+                                  "T3454A",
+                                  "A5599G",
+                                  "T10287C",
+                                  "C21575T",
+                                  "G22186A",
+                                  "C25317T",
+                                  "T25467C",
+                                  "C26947T",
+                                  "C28657T",
+                                  "G28817T"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-ASU2522_2021_Pima_County_2021-02-24",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20C"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2021-02-24"
+                              },
+                              "div": 29,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.427"
+                              },
+                              "location": {
+                                "value": "Pima_County"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2021.1493150684933,
+                                  2021.1493150684933
+                                ],
+                                "value": 2021.1493150684933
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          },
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "ORF1a: V1271A, I1714T; ORF3a: H57Q"
+                              },
+                              "mutations": {
+                                "ORF1a": [
+                                  "V1271A",
+                                  "I1714T"
+                                ],
+                                "ORF3a": [
+                                  "H57Q"
+                                ],
+                                "nuc": [
+                                  "T4077C",
+                                  "T5406C",
+                                  "C21622T",
+                                  "T25563G"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-CDC-ASC210000319_2021__2021-03-01",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20C"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2021-03-01"
+                              },
+                              "div": 21,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.427"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2021.16301369863,
+                                  2021.16301369863
+                                ],
+                                "value": 2021.16301369863
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          },
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "ORF1a: W2014L; ORF1b: Q1878H; ORF8: A65V"
+                              },
+                              "mutations": {
+                                "ORF1a": [
+                                  "W2014L"
+                                ],
+                                "ORF1b": [
+                                  "Q1878H"
+                                ],
+                                "ORF8": [
+                                  "A65V"
+                                ],
+                                "nuc": [
+                                  "C3817T",
+                                  "G6306T",
+                                  "C10078T",
+                                  "C13019T",
+                                  "G19101T",
+                                  "C22597T",
+                                  "C28087T"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-CDC-LC0000549_2020__2020-12-27",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20C"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2020-12-27"
+                              },
+                              "div": 24,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.427"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2020.9877049180327,
+                                  2020.9877049180327
+                                ],
+                                "value": 2020.9877049180327
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          }
+                        ],
+                        "name": "NODE_0000006",
+                        "node_attrs": {
+                          "clade_membership": {
+                            "value": "20C"
+                          },
+                          "date": {
+                            "value": "2020-10-10"
+                          },
+                          "div": 17,
+                          "num_date": {
+                            "confidence": [
+                              2020.7392151937327,
+                              2020.8671286508927
+                            ],
+                            "value": 2020.775571119912
+                          }
+                        }
+                      },
+                      {
+                        "branch_attrs": {
+                          "mutations": {}
+                        },
+                        "children": [
+                          {
+                            "branch_attrs": {
+                              "labels": {
+                                "aa": "ORF1a: D223H, H374Y, A872V, H1113Y, A2529V; ORF1b: D2270Y; ORF3a: T269M"
+                              },
+                              "mutations": {
+                                "ORF1a": [
+                                  "D223H",
+                                  "H374Y",
+                                  "A872V",
+                                  "H1113Y",
+                                  "A2529V"
+                                ],
+                                "ORF1b": [
+                                  "D2270Y"
+                                ],
+                                "ORF3a": [
+                                  "T269M"
+                                ],
+                                "nuc": [
+                                  "G932C",
+                                  "C1385T",
+                                  "G2755T",
+                                  "C2880T",
+                                  "C3602T",
+                                  "G4162T",
+                                  "C6445T",
+                                  "C7851T",
+                                  "C10798T",
+                                  "G20275T",
+                                  "T24982C",
+                                  "C26022T",
+                                  "C26198T"
+                                ]
+                              }
+                            },
+                            "name": "USA_AZ-TG742390_2020__2020-11-06",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20C"
+                              },
+                              "country": {
+                                "value": "USA"
+                              },
+                              "date": {
+                                "value": "2020-11-06"
+                              },
+                              "div": 19,
+                              "division": {
+                                "value": "Arizona"
+                              },
+                              "lineage": {
+                                "value": "B.1.569"
+                              },
+                              "num_date": {
+                                "confidence": [
+                                  2020.8483606557377,
+                                  2020.8483606557377
+                                ],
+                                "value": 2020.8483606557377
+                              },
+                              "region": {
+                                "value": "North America"
+                              }
+                            }
+                          },
+                          {
+                            "branch_attrs": {
+                              "mutations": {}
+                            },
+                            "children": [
+                              {
+                                "branch_attrs": {
+                                  "labels": {
+                                    "aa": "ORF1b: L2497F"
+                                  },
+                                  "mutations": {
+                                    "ORF1b": [
+                                      "L2497F"
+                                    ],
+                                    "nuc": [
+                                      "C20956T"
+                                    ]
+                                  }
+                                },
+                                "name": "USA_AZ-TG664513_2020__2020-04-19",
+                                "node_attrs": {
+                                  "clade_membership": {
+                                    "value": "20C"
+                                  },
+                                  "country": {
+                                    "value": "USA"
+                                  },
+                                  "date": {
+                                    "value": "2020-04-19"
+                                  },
+                                  "div": 7,
+                                  "division": {
+                                    "value": "Arizona"
+                                  },
+                                  "lineage": {
+                                    "value": "B.1"
+                                  },
+                                  "num_date": {
+                                    "confidence": [
+                                      2020.299180327869,
+                                      2020.299180327869
+                                    ],
+                                    "value": 2020.299180327869
+                                  },
+                                  "region": {
+                                    "value": "North America"
+                                  }
+                                }
+                              },
+                              {
+                                "branch_attrs": {
+                                  "mutations": {}
+                                },
+                                "children": [
+                                  {
+                                    "branch_attrs": {
+                                      "mutations": {}
+                                    },
+                                    "name": "USA_AZ-TG664476_2020__2020-04-20",
+                                    "node_attrs": {
+                                      "clade_membership": {
+                                        "value": "20C"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "date": {
+                                        "value": "2020-04-20"
+                                      },
+                                      "div": 6,
+                                      "division": {
+                                        "value": "Arizona"
+                                      },
+                                      "lineage": {
+                                        "value": "B.1"
+                                      },
+                                      "num_date": {
+                                        "confidence": [
+                                          2020.301912568306,
+                                          2020.301912568306
+                                        ],
+                                        "value": 2020.301912568306
+                                      },
+                                      "region": {
+                                        "value": "North America"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "branch_attrs": {
+                                      "labels": {
+                                        "aa": "N: Q9H, T135I, A182S; ORF14: K28N; ORF1a: T4087I; ORF1b: A1521V, V1905L; ORF9b: S6I"
+                                      },
+                                      "mutations": {
+                                        "N": [
+                                          "Q9H",
+                                          "T135I",
+                                          "A182S"
+                                        ],
+                                        "ORF14": [
+                                          "K28N"
+                                        ],
+                                        "ORF1a": [
+                                          "T4087I"
+                                        ],
+                                        "ORF1b": [
+                                          "A1521V",
+                                          "V1905L"
+                                        ],
+                                        "ORF9b": [
+                                          "S6I"
+                                        ],
+                                        "nuc": [
+                                          "T6746C",
+                                          "C11767T",
+                                          "C12525T",
+                                          "C18029T",
+                                          "G19180T",
+                                          "C27920T",
+                                          "G28300T",
+                                          "C28677T",
+                                          "G28817T"
+                                        ]
+                                      }
+                                    },
+                                    "name": "USA_AZ-TG768242_2020__2020-11-05",
+                                    "node_attrs": {
+                                      "clade_membership": {
+                                        "value": "20C"
+                                      },
+                                      "country": {
+                                        "value": "USA"
+                                      },
+                                      "date": {
+                                        "value": "2020-11-05"
+                                      },
+                                      "div": 15,
+                                      "division": {
+                                        "value": "Arizona"
+                                      },
+                                      "lineage": {
+                                        "value": "B.1.311"
+                                      },
+                                      "num_date": {
+                                        "confidence": [
+                                          2020.8456284153006,
+                                          2020.8456284153006
+                                        ],
+                                        "value": 2020.8456284153006
+                                      },
+                                      "region": {
+                                        "value": "North America"
+                                      }
+                                    }
+                                  }
+                                ],
+                                "name": "NODE_0000015",
+                                "node_attrs": {
+                                  "clade_membership": {
+                                    "value": "20C"
+                                  },
+                                  "date": {
+                                    "value": "2020-04-19"
+                                  },
+                                  "div": 6,
+                                  "num_date": {
+                                    "confidence": [
+                                      2020.276386834162,
+                                      2020.301912568306
+                                    ],
+                                    "value": 2020.2990244044397
+                                  }
+                                }
+                              }
+                            ],
+                            "name": "NODE_0000014",
+                            "node_attrs": {
+                              "clade_membership": {
+                                "value": "20C"
+                              },
+                              "date": {
+                                "value": "2020-04-13"
+                              },
+                              "div": 6,
+                              "num_date": {
+                                "confidence": [
+                                  2020.2760704517395,
+                                  2020.2954874552188
+                                ],
+                                "value": 2020.2826830683102
+                              }
+                            }
+                          }
+                        ],
+                        "name": "NODE_0000013",
+                        "node_attrs": {
+                          "clade_membership": {
+                            "value": "20C"
+                          },
+                          "date": {
+                            "value": "2020-04-13"
+                          },
+                          "div": 6,
+                          "num_date": {
+                            "confidence": [
+                              2020.270860818954,
+                              2020.2908987098645
+                            ],
+                            "value": 2020.2818331405576
+                          }
+                        }
+                      }
+                    ],
+                    "name": "NODE_0000010",
+                    "node_attrs": {
+                      "clade_membership": {
+                        "value": "20C"
+                      },
+                      "date": {
+                        "value": "2020-04-10"
+                      },
+                      "div": 6,
+                      "num_date": {
+                        "confidence": [
+                          2020.259782327516,
+                          2020.2888031755745
+                        ],
+                        "value": 2020.274451964684
+                      }
+                    }
+                  }
+                ],
+                "name": "NODE_0000005",
+                "node_attrs": {
+                  "clade_membership": {
+                    "value": "20C"
+                  },
+                  "date": {
+                    "value": "2020-04-05"
+                  },
+                  "div": 6,
+                  "num_date": {
+                    "confidence": [
+                      2020.2089946481121,
+                      2020.2730050737373
+                    ],
+                    "value": 2020.2612814414201
+                  }
+                }
+              }
+            ],
+            "name": "NODE_0000004",
+            "node_attrs": {
+              "clade_membership": {
+                "value": "20A"
+              },
+              "date": {
+                "value": "2020-03-01"
+              },
+              "div": 4,
+              "num_date": {
+                "confidence": [
+                  2020.1284540232762,
+                  2020.2624921331992
+                ],
+                "value": 2020.1663166891917
+              }
+            }
+          }
+        ],
+        "name": "NODE_0000000",
+        "node_attrs": {
+          "clade_membership": {
+            "value": "20A"
+          },
+          "date": {
+            "value": "2020-02-11"
+          },
+          "div": 4,
+          "num_date": {
+            "confidence": [
+              2020.0485510951653,
+              2020.194820887379
+            ],
+            "value": 2020.1131074508373
+          }
+        }
+      }
+    ],
+    "name": "NODE_0000001",
+    "node_attrs": {
+      "clade_membership": {
+        "value": "19A"
+      },
+      "date": {
+        "value": "2019-12-30"
+      },
+      "div": 0,
+      "num_date": {
+        "confidence": [
+          2019.9254322577422,
+          2019.995890410959
+        ],
+        "value": 2019.9951303390128
+      }
+    }
+  },
+  "version": "v2"
+}

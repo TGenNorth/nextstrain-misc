@@ -16,7 +16,6 @@ if __name__ == "__main__":
 
     # Read sequences with augur to benefit from additional checks for duplicates.
     sequences = list(read_sequences(*args.sequences))
-    #sequences = list(read_sequences(*args.sequences).values())
 
     # Create the requested output directory.
     output_dir = Path(args.output_dir)

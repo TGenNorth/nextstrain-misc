@@ -1,43 +1,52 @@
-from os import environ
-from socket import getfqdn
-from getpass import getuser
-
-def get_todays_date():
-    from datetime import datetime
-    date = datetime.today().strftime('%Y-%m-%d')
-    return date
-
-configfile: "config/Snakefile.yaml"
-
 rule all:
     input:
         auspice_json = "auspice/ncov.json",
-        tip_frequencies_json = "auspice/ncov_tip-frequencies.json",
-        dated_auspice_json = expand("auspice/ncov_{date}.json", date=get_todays_date()),
-        dated_tip_frequencies_json = expand("auspice/ncov_{date}_tip-frequencies.json", date=get_todays_date()),
-        auspice_json_gisaid = "auspice/ncov_gisaid.json",
-        auspice_json_zh = "auspice/ncov_zh.json"
+        tip_frequencies_json = "auspice/ncov_tip-frequencies.json"
 
 rule files:
     params:
-        include = "config/include.txt",
-        exclude = "config/exclude.txt",
-        reference = "config/reference.gb",
-        outgroup = "config/outgroup.fasta",
-        weights = "config/weights.tsv",
-        ordering = "config/ordering.tsv",
-        color_schemes = "config/color_schemes.tsv",
         auspice_config = "config/auspice_config.json",
-        auspice_config_gisaid = "config/auspice_config_gisaid.json",
-        auspice_config_zh = "config/auspice_config_zh.json",
-        lat_longs = "config/lat_longs.tsv",
-        description = "config/description.md",
-        description_zh = "config/description_zh.md",
         clades = "config/clades.tsv",
+        color_schemes = "config/color_schemes.tsv",
+        description = "config/description.md",
+        lat_longs = "config/lat_longs.tsv",
+        reference = "config/reference.gb",
         sequences = "data/sequences.fasta",
         metadata = "data/metadata.tsv"
 
 files = rules.files.params
+
+rule clean_metadata:
+    message:
+        """
+        Cleaning {input.metadata}:
+            - remove/fix non-AZ counties
+        """
+    input:
+        metadata = files.metadata
+    output:
+        metadata = "results/metadata.tsv"
+    shell:
+        """
+        python3 scripts/clean_metadata.py {input.metadata} {output.metadata}
+        """
+
+rule fix_colors:
+    message:
+        """
+        Generate color file based on metadata of interest
+            - Color AZ County metadata
+            - Color Pangolin lineages
+        """
+    input:
+        metadata = rules.clean_metadata.output.metadata,
+        color_schemes = files.color_schemes
+    output:
+        colors = "results/colors.tsv"
+    shell:
+        """
+        python3 scripts/fix_colors.py {input.metadata} {input.color_schemes} {output.colors}
+        """
 
 checkpoint partition_sequences:
     input:
@@ -65,7 +74,7 @@ rule align:
         reference = files.reference
     output:
         alignment = "results/split_alignments/{i}.fasta"
-    threads: 16
+    threads: 40
     shell:
         """
         augur align \
@@ -125,7 +134,7 @@ rule tree:
         alignment = rules.mask.output.alignment
     output:
         tree = "results/tree_raw.nwk"
-    threads: 16
+    threads: 40
     shell:
         """
         augur tree \
@@ -145,18 +154,17 @@ rule refine:
     input:
         tree = rules.tree.output.tree,
         alignment = rules.mask.output,
-        metadata = files.metadata
+        metadata = rules.clean_metadata.output.metadata
     output:
         tree = "results/tree.nwk",
         node_data = "results/branch_lengths.json"
     params:
-        root = "Wuhan-Hu-1-2019",
+        root = "best",
         clock_rate = 0.0008,
         clock_std_dev = 0.0004,
         coalescent = "skyline",
         date_inference = "marginal",
-        divergence_unit = "mutations",
-        clock_filter_iqd = 4
+        divergence_unit = "mutations"
     shell:
         """
         augur refine \
@@ -173,8 +181,7 @@ rule refine:
             --date-inference {params.date_inference} \
             --divergence-unit {params.divergence_unit} \
             --date-confidence \
-            --no-covariance \
-            --clock-filter-iqd {params.clock_filter_iqd}
+            --no-covariance
         """
 
 rule ancestral:
@@ -198,22 +205,6 @@ rule ancestral:
             --output-node-data {output.node_data} \
             --inference {params.inference} \
             --infer-ambiguous
-        """
-
-rule haplotype_status:
-    message: "Annotating haplotype status relative to {params.reference_node_name}"
-    input:
-        nt_muts = rules.ancestral.output.node_data
-    output:
-        node_data = "results/haplotype_status.json"
-    params:
-        reference_node_name = "USA/WA1/2020"
-    shell:
-        """
-        python3 scripts/annotate-haplotype-status.py \
-            --ancestral-sequences {input.nt_muts} \
-            --reference-node-name {params.reference_node_name:q} \
-            --output {output.node_data}
         """
 
 rule translate:
@@ -250,25 +241,10 @@ rule clades:
             --output-node-data {output.clade_data}
         """
 
-rule colors:
-    message: "Constructing colors file"
-    input:
-        ordering = files.ordering,
-        color_schemes = files.color_schemes
-    output:
-        colors = "config/colors.tsv"
-    shell:
-        """
-        python3 scripts/assign-colors.py \
-            --ordering {input.ordering} \
-            --color-schemes {input.color_schemes} \
-            --output {output.colors}
-        """
-
 rule recency:
     message: "Use metadata on submission date to construct submission recency field"
     input:
-        metadata = files.metadata
+        metadata = rules.clean_metadata.output.metadata
     output:
         "results/recency.json"
     shell:
@@ -282,7 +258,7 @@ rule tip_frequencies:
     message: "Estimating censored KDE frequencies for tips"
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata
+        metadata = rules.clean_metadata.output.metadata
     output:
         tip_frequencies_json = "auspice/ncov_tip-frequencies.json"
     params:
@@ -304,255 +280,30 @@ rule tip_frequencies:
         """
 
 rule export:
-    message: "Exporting data files for for auspice"
+    message: "Exporting data files for auspice"
     input:
         tree = rules.refine.output.tree,
-        metadata = files.metadata,
+        metadata = rules.clean_metadata.output.metadata,
         branch_lengths = rules.refine.output.node_data,
         nt_muts = rules.ancestral.output.node_data,
         aa_muts = rules.translate.output.node_data,
         auspice_config = files.auspice_config,
-        colors = rules.colors.output.colors,
-        lat_longs = files.lat_longs,
-        description = files.description,
-        clades = "results/clades.json",
-        recency = rules.recency.output
-    output:
-        auspice_json = "results/ncov_with_accessions.json"
-    shell:
-        """
-        augur export v2 \
-            --tree {input.tree} \
-            --metadata {input.metadata} \
-            --node-data {input.branch_lengths} {input.nt_muts} {input.aa_muts} {input.clades} {input.recency} \
-            --auspice-config {input.auspice_config} \
-            --colors {input.colors} \
-            --lat-longs {input.lat_longs} \
-            --description {input.description} \
-            --output {output.auspice_json}
-        """
-
-rule export_gisaid:
-    message: "Exporting data files for for auspice"
-    input:
-        tree = rules.refine.output.tree,
-        metadata = files.metadata,
-        branch_lengths = rules.refine.output.node_data,
-        nt_muts = rules.ancestral.output.node_data,
-        aa_muts = rules.translate.output.node_data,
-        auspice_config = files.auspice_config_gisaid,
-        colors = rules.colors.output.colors,
+        colors = rules.fix_colors.output.colors,
         lat_longs = files.lat_longs,
         description = files.description,
         clades = rules.clades.output.clade_data,
         recency = rules.recency.output
-    output:
-        auspice_json = "results/ncov_gisaid_with_accessions.json"
-    shell:
-        """
-        augur export v2 \
-            --tree {input.tree} \
-            --metadata {input.metadata} \
-            --node-data {input.branch_lengths} {input.nt_muts} {input.aa_muts} {input.clades} {input.recency} \
-            --auspice-config {input.auspice_config} \
-            --colors {input.colors} \
-            --lat-longs {input.lat_longs} \
-            --description {input.description} \
-            --output {output.auspice_json}
-        """
-
-rule export_zh:
-    message: "Exporting data files for for auspice"
-    input:
-        tree = rules.refine.output.tree,
-        metadata = files.metadata,
-        branch_lengths = rules.refine.output.node_data,
-        nt_muts = rules.ancestral.output.node_data,
-        aa_muts = rules.translate.output.node_data,
-        auspice_config = files.auspice_config_zh,
-        colors = rules.colors.output.colors,
-        lat_longs = files.lat_longs,
-        description = files.description_zh,
-        clades = rules.clades.output.clade_data,
-        recency = rules.recency.output
-    output:
-        auspice_json = "results/ncov_zh_with_accessions.json"
-    shell:
-        """
-        augur export v2 \
-            --tree {input.tree} \
-            --metadata {input.metadata} \
-            --node-data {input.branch_lengths} {input.nt_muts} {input.aa_muts} {input.clades} {input.recency} \
-            --auspice-config {input.auspice_config} \
-            --colors {input.colors} \
-            --lat-longs {input.lat_longs} \
-            --description {input.description} \
-            --output {output.auspice_json}
-        """
-
-rule incorporate_travel_history:
-    message: "Adjusting main auspice JSON to take into account travel history"
-    input:
-        lat_longs = files.lat_longs,
-        colors = rules.colors.output.colors,
-        auspice_json = rules.export.output.auspice_json
-    output:
-        auspice_json = "results/ncov_with_accessions_and_travel_branches.json"
-    shell:
-        """
-        python3 ./scripts/modify_tree_according_to_division_exposure.py \
-            {input.auspice_json} {input.colors} {input.lat_longs} {output.auspice_json}
-        """
-
-rule incorporate_travel_history_gisaid:
-    message: "Adjusting GISAID auspice JSON to take into account travel history"
-    input:
-        lat_longs = files.lat_longs,
-        colors = rules.colors.output.colors,
-        auspice_json = rules.export_gisaid.output.auspice_json
-    output:
-        auspice_json = "results/ncov_gisaid_with_accessions_and_travel_branches.json"
-    shell:
-        """
-        python3 ./scripts/modify_tree_according_to_division_exposure.py \
-            {input.auspice_json} {input.colors} {input.lat_longs} {output.auspice_json}
-        """
-
-rule incorporate_travel_history_zh:
-    message: "Adjusting ZH auspice JSON to take into account travel history"
-    input:
-        lat_longs = files.lat_longs,
-        colors = rules.colors.output.colors,
-        auspice_json = rules.export_zh.output.auspice_json
-    output:
-        auspice_json = "results/ncov_zh_with_accessions_and_travel_branches.json"
-    shell:
-        """
-        python3 ./scripts/modify_tree_according_to_division_exposure.py \
-            {input.auspice_json} {input.colors} {input.lat_longs} {output.auspice_json}
-        """
-
-rule fix_colorings:
-    message: "Remove extraneous colorings for main build"
-    input:
-        auspice_json = rules.incorporate_travel_history.output.auspice_json
     output:
         auspice_json = "auspice/ncov.json"
     shell:
         """
-        python scripts/fix-colorings.py \
-            --input {input.auspice_json} \
+        augur export v2 \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --node-data {input.branch_lengths} {input.nt_muts} {input.aa_muts} {input.clades} {input.recency} \
+            --auspice-config {input.auspice_config} \
+            --colors {input.colors} \
+            --lat-longs {input.lat_longs} \
+            --description {input.description} \
             --output {output.auspice_json}
         """
-
-rule fix_colorings_gisaid:
-    message: "Remove extraneous colorings for the GISAID build"
-    input:
-        auspice_json = rules.incorporate_travel_history_gisaid.output.auspice_json
-    output:
-        auspice_json = "auspice/ncov_gisaid.json"
-    shell:
-        """
-        python scripts/fix-colorings.py \
-            --input {input.auspice_json} \
-            --output {output.auspice_json}
-        """
-
-rule fix_colorings_zh:
-    message: "Remove extraneous colorings for the Chinese language build"
-    input:
-        auspice_json = rules.incorporate_travel_history_zh.output.auspice_json
-    output:
-        auspice_json = "auspice/ncov_zh.json"
-    shell:
-        """
-        python scripts/fix-colorings.py \
-            --input {input.auspice_json} \
-            --output {output.auspice_json}
-        """
-
-rule dated_json:
-    message: "Copying dated Auspice JSON"
-    input:
-        auspice_json = rules.fix_colorings.output.auspice_json,
-        tip_frequencies_json = rules.tip_frequencies.output.tip_frequencies_json
-    output:
-        dated_auspice_json = rules.all.input.dated_auspice_json,
-        dated_tip_frequencies_json = rules.all.input.dated_tip_frequencies_json
-    shell:
-        """
-        cp {input.auspice_json} {output.dated_auspice_json}
-        cp {input.tip_frequencies_json} {output.dated_tip_frequencies_json}
-        """
-
-rule poisson_tmrca:
-    input:
-        tree = rules.refine.output.tree,
-        metadata = files.metadata,
-        nt_muts = rules.ancestral.output.node_data
-    output:
-        "figures/ncov_poisson-tmrca.png"
-    shell:
-        """
-        python scripts/tmrca_estimate.py --tree {input.tree} --metadata {input.metadata} --node-data {input.nt_muts} --output {output}
-        """
-
-rule branching_process_R0:
-    params:
-        infectious_period = 10, # days
-        population = [6000, 30000, 150000],
-        start_recent = "2019-12-01",
-        start_early = "2019-11-01"
-    output:
-        "figures/ncov_branching-R0-recent.png",
-        "figures/ncov_branching-R0-early.png"
-    shell:
-        """
-        python scripts/branching_process.py --infectious-period {params.infectious_period}\
-                    --start {params.start_recent} \
-                    --population {params.population} \
-                    --output {output[0]} &&\
-        python scripts/branching_process.py --infectious-period {params.infectious_period}\
-                    --start {params.start_early} \
-                    --population {params.population} \
-                    --output {output[1]}
-        """
-
-try:
-    deploy_origin = (
-        f"from AWS Batch job `{environ['AWS_BATCH_JOB_ID']}`"
-        if environ.get("AWS_BATCH_JOB_ID") else
-        f"by the hands of {getuser()}@{getfqdn()}"
-    )
-except:
-    # getuser() and getfqdn() may not always succeed, and this catch-all except
-    # means that the Snakefile won't crash.
-    deploy_origin = "by an unknown identity"
-
-rule deploy_to_staging:
-    input:
-        *rules.all.input
-    params:
-        slack_message = json.dumps({"text":f"Deployed <https://nextstrain.org/staging/ncov|nextstrain.org/staging/ncov> {deploy_origin}"}),
-        slack_webhook = config["slack_webhook"] or "",
-        s3_staging_url = config["s3_staging_url"]
-    shell:
-        """
-        nextstrain deploy {params.s3_staging_url:q} {input:q}
-
-        if [[ -n "{params.slack_webhook}" ]]; then
-            curl {params.slack_webhook:q} \
-                --header 'Content-type: application/json' \
-                --data-raw {params.slack_message:q} \
-                --fail --silent --show-error \
-                --include
-        fi
-        """
-
-rule clean:
-    message: "Removing directories: {params}"
-    params:
-        "results ",
-        "auspice"
-    shell:
-        "rm -rfv {params}"
