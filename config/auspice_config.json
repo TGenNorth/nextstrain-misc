@@ -54,7 +54,8 @@
     "branch_label": "none"
   },
   "filters": [
-    "location"
+    "location",
+    "lineage"
   ],
   "panels": [
     "tree",
