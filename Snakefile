@@ -305,5 +305,6 @@ rule export:
             --colors {input.colors} \
             --lat-longs {input.lat_longs} \
             --description {input.description} \
+            --minify-json \
             --output {output.auspice_json}
         """

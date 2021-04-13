@@ -1,12 +1,16 @@
 #!/bin/bash
-#SBATCH --job-name NextstrainWeekly_AZ_test
-#SBATCH --workdir=/scratch/cfrench/COV/Nextstrain/Weekly/AZ_test
-#SBATCH --output=/scratch/cfrench/COV/Nextstrain/Weekly/AZ_test/slurmout.txt
-#SBATCH --export=ALL
-#SBATCH --cpus-per-task=40
-#SBATCH --time=5-00:00:00
-#SBATCH --mem=150gb
-
 export AUGUR_RECURSION_LIMIT=50000
-echo "limit: $AUGUR_RECURSION_LIMIT"
-snakemake -F --cores 40
+export AUGUR_DIR=$(realpath ${0%/*})
+
+JOBID=$(sbatch \
+  --job-name="Nextstrain_${AUGUR_DIR##*/}" \
+  --workdir="${AUGUR_DIR}" \
+  --output="${AUGUR_DIR}/slurmout.txt" \
+  --export="ALL" \
+  --cpus-per-task="40" \
+  --time="5-00:00:00" \
+  --mem="150gb" \
+  --wrap="echo limit: ${AUGUR_RECURSION_LIMIT}; echo job-name: Nextstrain_${AUGUR_DIR##*/}; snakemake -F --cores 40" \
+)
+
+# snakemake -R export --cores 40
